@@ -3,7 +3,7 @@ import Logo from './Logo';
 import Search from './Search';
 import UserMenu from './UserMenu';
 
-export const Navbar = () => {
+const Navbar = () => {
   return (
     <div
       className="
