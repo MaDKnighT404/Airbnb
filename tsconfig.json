@@ -21,6 +21,8 @@
     ],
     "paths": {
       "@components/*": ["./app/components/*"],
+      "@inputs/*": ["./app/components/inputs/*"],
+      "@hooks/*": ["./app/hooks/*"],
       "@utils/*": ["./src/utils/*"]
     }
   },
