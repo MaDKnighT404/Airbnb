@@ -37,20 +37,19 @@ const LoginModal = () => {
     signIn('credentials', {
       ...data,
       redirect: false,
-    })
-      .then((callback) => {
-        setIsLoading(false);
+    }).then((callback) => {
+      setIsLoading(false);
 
-        if (callback?.ok) {
-          toast.success('Logged in');
-          router.refresh();
-          loginModal.onClose();
-        }
+      if (callback?.ok) {
+        toast.success('Logged in');
+        router.refresh();
+        loginModal.onClose();
+      }
 
-        if (callback?.error) {
-          toast.error(callback.error);
-        }
-    })
+      if (callback?.error) {
+        toast.error(callback.error);
+      }
+    });
   };
 
   const bodyContent = (
@@ -79,8 +78,18 @@ const LoginModal = () => {
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">
       <hr />
-      <Button outline label="Continue with Google" icon={FcGoogle} onClick={() => {}} />
-      <Button outline label="Continue with Github" icon={AiFillGithub} onClick={() => {}} />
+      <Button
+        outline
+        label="Continue with Google"
+        icon={FcGoogle}
+        onClick={() => signIn('google')}
+      />
+      <Button
+        outline
+        label="Continue with Github"
+        icon={AiFillGithub}
+        onClick={() => signIn('github')}
+      />
       <div
         className="
          text-neutral-500
@@ -93,7 +102,8 @@ const LoginModal = () => {
           <div>Already have an account?</div>
           <div
             onClick={registerModal.onClose}
-            className="text-neutral-800 cursor-pointer hover:underline">
+            className="text-neutral-800 cursor-pointer hover:underline"
+          >
             Log in
           </div>
         </div>
