@@ -21,6 +21,7 @@
     ],
     "paths": {
       "@app/*": ["./app/*"],
+      "@pages/*": ["./pages/*"],
       "@components/*": ["./app/components/*"],
       "@inputs/*": ["./app/components/inputs/*"],
       "@hooks/*": ["./app/hooks/*"],
